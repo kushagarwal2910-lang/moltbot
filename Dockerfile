@@ -37,5 +37,5 @@ ENV NODE_ENV=production
 # This reduces the attack surface by preventing container escape via root privileges
 USER node
 
-CMD ["node", "dist/index.js", "gateway", "--port", "8080", "--allow-unconfigured"]
+CMD ["sh", "-c", "node dist/index.js gateway --port ${PORT:-8080} --allow-unconfigured"]
 
